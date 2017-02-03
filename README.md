@@ -3,6 +3,11 @@ Auto set two attenuators
 # 简介
 使用树莓派软硬件，控制上海华湘的可编程衰减器。
 本软件设计了一个简洁的界面，用户可配置后，即可自动循环按照一定的步骤自动改变衰减值。
+
+#软件配置
+* PyQt5
+* Rpi.GPIO
+
 # 硬件配置
 * 树莓派3 也即40pin GPIO
 * 管脚定义
@@ -26,7 +31,3 @@ Auto set two attenuators
 |5|35|
 |6|33|
 |7|31|
-
-#软件配置
-* PyQt5
-* Rpi.GPIO
