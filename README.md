@@ -5,7 +5,7 @@ Auto set two attenuators
 本软件设计了一个简洁的界面，用户可配置后，即可自动循环按照一定的步骤自动改变衰减值。
 
 #软件配置
-* PyQt5
+* PyQt5 (sudo apt-get install python3-PyQt5  or sudo apt-get install python-PyQt5)
 * Rpi.GPIO
 
 # 硬件配置
