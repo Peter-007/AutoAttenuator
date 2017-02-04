@@ -11,6 +11,7 @@ Auto set two attenuators
 # 硬件配置
 * 树莓派3 有40pin GPIO
 * 管脚定义：
+
 |Attenuator-1|Raspberry GPIO|
 |------------|--------------|
 |1|11|
