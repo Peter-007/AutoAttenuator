@@ -12,8 +12,8 @@ import RPi.GPIO as GPIO
   6白 -----	GPIO.5	 18
   7红 -----	GPIO.29	 40
   8黑 -----		
-  9黄 -----	5V	    2
- 10紫 -----  0V  	6
+  9黄 -----	 5V	     2
+ 10紫 -----  0V  	 6
   
 衰减器2   GPIO_Name  PIN
  1蓝 ----- GPIO.22  31
@@ -26,6 +26,12 @@ import RPi.GPIO as GPIO
  8黑 -----
  9黄 ----- 5V    	4
 10紫 ----- 0V    	39
+
+可调衰减器控制方式
+              PIN:  1     2   3   4   5   6    7   8   9  10
+GKTS1-7-63.5-6-HD: 0.5dB 1dB 2dB 4dB 8dB 16dB 32dB NO Vdd GND
+备注:当需要相应的衰减值时,对应各控制点输入低电平(Low),其余控制点输入高电平(High)
+
 '''
 
 class ATT(object):
@@ -46,7 +52,7 @@ class ATT(object):
 
     # Val: 期望设置的衰减值，需要是0.5的倍数
     def SetAtt(self,Val):
-        n=int(round(Val*2))     #可编程衰减器的步进是0.5dB,也即实现1dB的衰减，对应的管脚二进制值应该是2
+        n=int(round(Val*2))         #可编程衰减器的步进是0.5dB,也即实现1dB的衰减，对应的管脚二进制值应该是2
         strBin='{:07b}'.format(n)   #转换程7个bit位的二进制字符串
         listVal = [not bool(int(x)) for x in strBin]  #可编程衰减器是低电平有效，故而对每个bit位取反
         GPIO.output(self.listPin,listVal)   #将转换后的二进制列表值同时配置给可编程衰减器所有7个管脚
