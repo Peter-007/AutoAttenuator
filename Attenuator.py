@@ -1,7 +1,16 @@
 import RPi.GPIO as GPIO
 
 '''
-管脚定义：
+1.可编程衰减器模块控制方式，详见模块的技术规格书
+
+              PIN:  1     2   3   4   5   6    7   8   9  10
+GKTS1-7-63.5-6-HD: 0.5dB 1dB 2dB 4dB 8dB 16dB 32dB NO Vdd GND
+
+备注:当需要相应的衰减值时,对应各控制点输入低电平(Low),其余控制点输入高电平(High)
+
+
+2.管脚定义：（采用国际标准的色序）
+
             Raspberry
 衰减器1   GPIO_Name   PIN
   1蓝 -----	GPIO.0	 11
@@ -26,11 +35,6 @@ import RPi.GPIO as GPIO
  8黑 -----
  9黄 ----- 5V    	4
 10紫 ----- 0V    	39
-
-可调衰减器控制方式
-              PIN:  1     2   3   4   5   6    7   8   9  10
-GKTS1-7-63.5-6-HD: 0.5dB 1dB 2dB 4dB 8dB 16dB 32dB NO Vdd GND
-备注:当需要相应的衰减值时,对应各控制点输入低电平(Low),其余控制点输入高电平(High)
 
 '''
 
